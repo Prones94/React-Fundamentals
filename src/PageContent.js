@@ -1,16 +1,28 @@
 import React from 'react'
 import Project from './Project.js'
 import './PageContent.css'
+import data from './data'
 
 function PageContent() {
     return (
         <div className="PageContent">
-            <Project title="Tetris Dots" image="/images/logo192.png" link="#" />
-            <Project title="Zombie Server" image="/images/logo192.png" link="#" />
-            <Project title="Amazing Colors" image="/images/logo192.png" link="#" />
-            <Project title="Flip Toggle" image="/images/logo192.png" link="#" />
-            <Project title="121 Second St" image="/images/logo192.png" link="#" />
-            <Project title="Slide Shows" image="/images/logo192.png" link="#" />
+        <div className="projects">
+            {
+                // place is the element in the array
+                // i is the index of the element
+                data.map(({title, image}, i) => { // Data takes a function as a parameter
+                    return( // Returns a component
+                        <Project
+                            key = { `${i}-${ image }` }
+                            title = { title }
+                            image = {image}
+                            link = {`${i}`}
+                        />
+                    )
+                })
+            }
+        </div>
+            
         </div>
     )
 }

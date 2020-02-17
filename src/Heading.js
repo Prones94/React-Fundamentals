@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 
-function Heading(props) { // Props = properties 
+function Heading({title, subtitle}) { // Props = properties 
     return (
       <header className = "App-header">
-        <h1>{props.title}</h1>
-        <p>{props.subtitle}</p>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
       </header>)
   }
 

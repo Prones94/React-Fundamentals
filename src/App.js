@@ -1,18 +1,24 @@
 import React from 'react';
-import Heading from './Heading';
 import PageHeader from './PageHeader';
+import data from './data'
 import PageContent from './PageContent';
-import Footer from './Footer.js'
+import Footer from './Footer'
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import SelectedProject from './SelectedProject'
+
 
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <PageHeader />
-      <PageContent />
+      <Route path='/' component={PageContent} />
+      <Route exact path='/:index' component={SelectedProject}/>
       <Footer />
     </div>
+    </Router>
   );
 }
 
